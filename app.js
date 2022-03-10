@@ -12,6 +12,9 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+// Ajout du dossier public
+app.use(express.static('public'));
+
 // Ajout du systeme de route
 app.use(homeRouter);
 
