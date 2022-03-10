@@ -1,3 +1,5 @@
+const { contactValidator } = require('../form-validation/contact-validator');
+
 const homeController = {
 
     index: (req, res) => {
@@ -9,7 +11,14 @@ const homeController = {
     },
 
     contactPost: (req, res) => {
-        res.sendStatus(501);
+        if (!contactValidator.isValidSync(req.body)) {
+            res.redirect('/contact');
+            return;
+        }
+
+        // Cas pratique => Save in Database
+        console.log(req.body);
+        res.render('home/contactResponse');
     }
 };
 
