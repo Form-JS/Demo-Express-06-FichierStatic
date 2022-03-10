@@ -1,10 +1,14 @@
 const { contactValidator } = require('../form-validation/contact-validator');
-
+const authorData = require('../data/author.json');
 
 const homeController = {
 
     index: (req, res) => {
-        res.render('home/index');
+        const data = {
+            fullname: authorData.firstname + ' ' + authorData.lastname,
+            image: authorData.image
+        };
+        res.render('home/index', data);
     },
 
     contact: (req, res) => {
