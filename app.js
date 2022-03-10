@@ -4,7 +4,7 @@ const homeRouter = require('./routes/home-router');
 // Création du serveur
 const app = express();
 
-// Pour gérer les formulaires POST
+// Pour gérer les formulaires "application/x-www-form-urlencoded"
 app.use(express.urlencoded({ extended: true }));
 
 // Utilisation du moteur de vue 'EJS' 

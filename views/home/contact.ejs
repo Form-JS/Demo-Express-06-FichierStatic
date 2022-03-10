@@ -13,7 +13,7 @@
 <body>
     <h1>Page de contact</h1>
 
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <div>
             <label for="pseudo">Pseudo</label>
             <input type="text" id="pseudo" name="pseudo">
@@ -21,6 +21,9 @@
         <div>
             <label for="nbPerson">Nombre de Personne</label>
             <input type="number" name="nbPerson" id="nbPerson">
+        </div>
+        <div>
+            <input type="file" name="myFile">
         </div>
         <div>
             <button type="submit">Envoyer le formulaire</button>

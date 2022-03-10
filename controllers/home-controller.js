@@ -1,5 +1,6 @@
 const { contactValidator } = require('../form-validation/contact-validator');
 
+
 const homeController = {
 
     index: (req, res) => {
@@ -18,6 +19,10 @@ const homeController = {
 
         // Cas pratique => Save in Database
         console.log(req.body);
+
+        // Dans le cas d'un fichier, utiliser les données de "req.file" 
+        // pour ajouter des informations en DB (originalName, fileName, ...)
+        console.log(req.file);
         res.render('home/contactResponse');
     }
 };
